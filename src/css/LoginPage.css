@@ -1,0 +1,45 @@
+::placeholder {
+    color: white;
+}
+
+.LoginForm {
+    background-color: #56638A;
+    width: 480px;
+    height: 400px;
+    padding: 80px;
+    margin: 0 auto;
+    border-radius: 12px;
+    position: relative;
+
+}
+
+.EmailInput, .PassInput {
+    padding: 10px 30px 10px 30px;
+    width: 400px;
+    height: 42px;
+    border-radius: 8px;
+    border: solid 2px white;
+    background-color: transparent;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight:2000;
+    margin-top: 20px;
+}
+
+.EmailInput:focus, .PassInput:focus {
+    outline: none !important;
+    border: solid black 2px;
+
+}
+
+.LoginInput {
+    width: 468px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+

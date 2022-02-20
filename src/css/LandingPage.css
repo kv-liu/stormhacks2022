@@ -1,0 +1,43 @@
+.MainContainer{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+.TextContainer {
+    text-align: center;
+    color: aliceblue;
+    display: inline-block;
+}
+
+.WebName {
+    font-size: 100px;
+    display: inline-block;
+}
+
+.Icon {
+    width: 80px;
+    height: 80px;
+    filter: brightness(0) invert(1);
+    display: inline-block;
+    padding-right: 50px;
+}
+
+.DemoBtn, .LoginBtn {
+    padding: 20px 50px 20px 50px;
+    width: 680px;
+    height: 60px;
+    border-radius: 8px;
+    border: solid 2px white;
+    background-color: transparent;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight:2000;
+}
+
+.TryDemoText:link, .TryDemoText:visited, .LoginText:link, .LoginText:visited {
+    text-decoration: none;
+    color:white;
+}
+
