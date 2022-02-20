@@ -1,0 +1,28 @@
+body {
+
+    background-color: #1A1B41;
+    
+}
+
+.Banner {
+    background-color: #F1FFE7;
+    height: 60px;
+}
+
+.DemoText {
+    color: black;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.SignUpBtn {
+    background-color: transparent;
+    border-color:#C2E7DA;
+    border-width: 2px;
+    border-style: solid;
+    display: inline-block;
+    padding: 10px 20px 10px 20px;
+    border-radius: 6px;
+    float:right;
+    
+}
