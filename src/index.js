@@ -1,19 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import LandingPage from './components/DemoPageView/DemoPage';
+import DemoButton from './components/LandingView/DemoButton'
+import LandingPage from './components/LandingView/LandingPage'
+import DemoPage from './components/DemoPageView/DemoPage'
+import DemoPageBanner from './components/DemoPageView/DemoPageBanner'
+import {  BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
+export default function App() {
+  return(
+    <Router>
+      <DemoPageBanner />
+      <Routes>
+        <Route exact path="/" element={<LandingPage/>}/>
+        <Route exact path="/demopage" element={<DemoPage/>}/>
+      </Routes>
+    </Router>
+  );
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    <LandingPage></LandingPage>
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

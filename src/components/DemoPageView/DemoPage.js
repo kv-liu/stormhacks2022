@@ -1,13 +1,10 @@
 import '../../css/DemoPage.css';
-import LandingPageBanner from './DemoPageBanner';
+import DemoPageBanner from './DemoPageBanner';
 
 function DemoPage() {
   return (
     <div>
-      <LandingPageBanner></LandingPageBanner>
-        
-
-
+      <h1>Demo Page</h1>
     </div>
   );
 }
