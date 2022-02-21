@@ -4,45 +4,43 @@ import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 import logo from '../../pngs/paperclip-icon.png'
 import axios from 'axios'
 
+const baseURL = 'https://xmeze32pfp.sharedwithexpose.com/sanctum/csrf-cookie';
 
-
-const url = 'https://xmeze32pfp.sharedwithexpose.com/sanctum/csrf-cookie';
-
-const testURL = 'http://localhost:3000/login/'
 
 function LoginPage(){
 
-    const [formValue, setformValue] = React.useState({
+    const [formData, setformData] = React.useState({
         email: '',
         password: ''
     });
 
-    const handleSubmit = async() => {
-        const loginFormData = new FormData();
-        loginFormData.append('email', formValue.email)
-        loginFormData.append('password', formValue.password)
-        console.log(loginFormData)
-
-        try {
-            const response = await axios({
-                method: 'post',
-                url: '',
-                data: loginFormData,
-            })
-        } catch(error) {
-            console.log(error)
-        }
-
-    }
-
-
     const handleChange = (event) => {
-        setformValue({
-            formValue,
+        setformData({
+            ...formData,
             [event.target.name]: event.target.value
         });
     }
 
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        axios.get("/api/user")
+
+        const userData = {
+            email: formData.email,
+            password: formData.password
+        };
+
+        console.log(userData)
+        axios.post("/login", userData)
+        .then((response) => {
+            console.log("Made it here");
+            console.log(response.status);
+        })
+
+
+    }
 
 	return(
 		<div>
@@ -54,8 +52,8 @@ function LoginPage(){
                 </div>
 
                 <form className='LoginForm' onSubmit={handleSubmit}>
-                    <input type='email' name='email' value={formValue.email} onChange={handleChange} placeholder='Email'className='EmailInput'></input>
-                    <input type='password' name='password' value={formValue.password} onChange={handleChange} placeholder='Password' className='PassInput'></input>
+                    <input type='email' name='email' value={formData.email} onChange={handleChange} placeholder='Email'className='EmailInput'></input>
+                    <input type='password' name='password' value={formData.password} onChange={handleChange} placeholder='Password' className='PassInput'></input>
                     <button type='submit' className='LoginInput'>Log in</button>
                     <p>Forgot Password?</p>
                     <p>Don't have an account? <span>Create one</span></p>
